@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carimbo Corporativo - Telefônica</title>
+<style>
+body {
+  font-family: Segoe UI, Arial, sans-serif;
+  background:#F2F2F2;
+  margin:0;
+}
+.header {
+  background:#0B1F3F;
+  color:white;
+  padding:15px;
+  text-align:center;
+  font-size:20px;
+  font-weight:bold;
+}
+.container {
+  max-width:700px;
+  margin:20px auto;
+  background:white;
+  padding:25px;
+  border-radius:8px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+label {
+  display:block;
+  margin-top:12px;
+  font-weight:600;
+  color:#333;
+}
+select, input {
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+button {
+  margin-top:15px;
+  padding:12px;
+  width:100%;
+  border:none;
+  border-radius:5px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.btn-gerar { background:#E60028; color:white; }
+.btn-copiar { background:#0078D4; color:white; }
+textarea {
+  width:100%;
+  height:160px;
+  margin-top:15px;
+  border-radius:5px;
+  border:1px solid #ccc;
+  padding:10px;
+}
+.footer {
+  text-align:center;
+  font-size:11px;
+  color:#777;
+  margin-top:15px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+Gerador de Carimbo Corporativo - Telefônica
+</div>
+
+<div class="container">
+
+<label>Tipo do Carimbo</label>
+<select id="tipo">
+<option>CONCLUÍDO</option>
+<option>PENDÊNCIA</option>
+</select>
+
+<label>Pendência</label>
+<select id="pendencia">
+<option>AP</option>
+<option>-</option>
+</select>
+
+<label>Status</label>
+<input id="status" placeholder="CLIENTE_IMPRODUTIVA">
+
+<label>Parceira</label>
+<input id="parceira" placeholder="DELFIA">
+
+<label>Motivo</label>
+<input id="motivo" placeholder="CABEAMENTO DESCONECTADO">
+
+<label>Técnico</label>
+<input id="tecnico" placeholder="Seu nome">
+
+<button class="btn-gerar" onclick="gerarCarimbo()">Gerar Carimbo</button>
+<button class="btn-copiar" onclick="copiar()">Copiar Carimbo</button>
+
+<textarea id="resultado" readonly></textarea>
+
+<div class="footer">
+Uso interno corporativo • Telefônica
+</div>
+
+</div>
+
+<script>
+function gerarCarimbo(){
+  const tipo = document.getElementById('tipo').value;
+  const pendencia = document.getElementById('pendencia').value;
+  const status = document.getElementById('status').value;
+  const parceira = document.getElementById('parceira').value;
+  const motivo = document.getElementById('motivo').value;
+  const tecnico = document.getElementById('tecnico').value;
+
+  const texto = `TIPO DO CARIMBO: ${tipo}\nPENDÊNCIA: ${pendencia}\nSTATUS: ${status}\nPARCEIRA: ${parceira}\nMOTIVO: ${motivo}\nTÉCNICO: ${tecnico}`;
+
+  document.getElementById('resultado').value = texto;
+}
+
+function copiar(){
+  const textarea = document.getElementById('resultado');
+  textarea.select();
+  document.execCommand('copy');
+  alert('Carimbo copiado com sucesso!');
+}
+</script>
+
+</body>
+</html>
