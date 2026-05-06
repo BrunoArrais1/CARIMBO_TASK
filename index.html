@@ -5,65 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carimbo Corporativo - Telefônica</title>
 <style>
-body {
-  font-family: Segoe UI, Arial, sans-serif;
-  background:#F2F2F2;
-  margin:0;
-}
-.header {
-  background:#0B1F3F;
-  color:white;
-  padding:15px;
-  text-align:center;
-  font-size:20px;
-  font-weight:bold;
-}
-.container {
-  max-width:700px;
-  margin:20px auto;
-  background:white;
-  padding:25px;
-  border-radius:8px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.15);
-}
-label {
-  display:block;
-  margin-top:12px;
-  font-weight:600;
-  color:#333;
-}
-select, input {
-  width:100%;
-  padding:10px;
-  margin-top:5px;
-  border-radius:5px;
-  border:1px solid #ccc;
-}
-button {
-  margin-top:15px;
-  padding:12px;
-  width:100%;
-  border:none;
-  border-radius:5px;
-  font-weight:bold;
-  cursor:pointer;
-}
+body { font-family: Segoe UI, Arial, sans-serif; background:#F2F2F2; margin:0; }
+.header { background:#0B1F3F; color:white; padding:15px; text-align:center; font-size:20px; font-weight:bold; }
+.container { max-width:700px; margin:20px auto; background:white; padding:25px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+label { display:block; margin-top:12px; font-weight:600; color:#333; }
+select, input { width:100%; padding:10px; margin-top:5px; border-radius:5px; border:1px solid #ccc; }
+button { margin-top:15px; padding:12px; width:100%; border:none; border-radius:5px; font-weight:bold; cursor:pointer; }
 .btn-gerar { background:#E60028; color:white; }
 .btn-copiar { background:#0078D4; color:white; }
-textarea {
-  width:100%;
-  height:160px;
-  margin-top:15px;
-  border-radius:5px;
-  border:1px solid #ccc;
-  padding:10px;
-}
-.footer {
-  text-align:center;
-  font-size:11px;
-  color:#777;
-  margin-top:15px;
-}
+textarea { width:100%; height:180px; margin-top:15px; border-radius:5px; border:1px solid #ccc; padding:10px; }
+.footer { text-align:center; font-size:11px; color:#777; margin-top:15px; }
 </style>
 </head>
 <body>
@@ -87,16 +38,25 @@ Gerador de Carimbo Corporativo - Telefônica
 </select>
 
 <label>Status</label>
-<input id="status" placeholder="CLIENTE_IMPRODUTIVA">
+<select id="status">
+<option>CLIENTE_IMPRODUTIVA</option>
+<option>-</option>
+</select>
 
 <label>Parceira</label>
-<input id="parceira" placeholder="DELFIA">
+<select id="parceira">
+<option>DELFIA</option>
+<option>-</option>
+</select>
 
 <label>Motivo</label>
-<input id="motivo" placeholder="CABEAMENTO DESCONECTADO">
+<select id="motivo">
+<option>CABEAMENTO DESCONECTADO</option>
+<option>-</option>
+</select>
 
 <label>Técnico</label>
-<input id="tecnico" placeholder="Seu nome">
+<input id="tecnico" value="BRUNO ARRAIS">
 
 <button class="btn-gerar" onclick="gerarCarimbo()">Gerar Carimbo</button>
 <button class="btn-copiar" onclick="copiar()">Copiar Carimbo</button>
