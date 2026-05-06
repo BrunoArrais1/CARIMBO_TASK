@@ -13,59 +13,101 @@ select, input { width:100%; padding:10px; margin-top:5px; border-radius:5px; bor
 button { margin-top:15px; padding:12px; width:100%; border:none; border-radius:5px; font-weight:bold; cursor:pointer; }
 .btn-gerar { background:#E60028; color:white; }
 .btn-copiar { background:#0078D4; color:white; }
-textarea { width:100%; height:180px; margin-top:15px; border-radius:5px; border:1px solid #ccc; padding:10px; }
+textarea { width:100%; height:240px; margin-top:15px; border-radius:5px; border:1px solid #ccc; padding:10px; }
 .footer { text-align:center; font-size:11px; color:#777; margin-top:15px; }
 </style>
 </head>
 <body>
 
-<div class="header">
-Gerador de Carimbo Corporativo - Telefônica
-</div>
+<div class="header">Gerador de Carimbo Corporativo - Telefônica</div>
 
 <div class="container">
 
 <label>Tipo do Carimbo</label>
 <select id="tipo">
-<option>CONCLUÍDO</option>
-<option>PENDÊNCIA</option>
+<option>CONCLUIDO</option>
+<option>IMPRODUTIVA</option>
+<option>NÃO RESOLUTIVO</option>
+<option>DUPLICADO/INDEVIDO</option>
 </select>
 
 <label>Pendência</label>
 <select id="pendencia">
 <option>AP</option>
-<option>-</option>
+<option>FW</option>
+<option>SW</option>
+<option>SIMETBOX</option>
+<option>LINK DOWN</option>
+<option>INFRA</option>
+<option>TROCA</option>
 </select>
 
 <label>Status</label>
 <select id="status">
+<option>CONCLUIDO</option>
 <option>CLIENTE_IMPRODUTIVA</option>
-<option>-</option>
+<option>NÃO RESOLUTIVO</option>
+<option>DUPLICADO/INDEVIDO</option>
 </select>
 
 <label>Parceira</label>
 <select id="parceira">
 <option>DELFIA</option>
-<option>-</option>
+<option>INELCOM</option>
+<option>MAMINFO</option>
+<option>SPREAD</option>
 </select>
 
 <label>Motivo</label>
 <select id="motivo">
 <option>CABEAMENTO DESCONECTADO</option>
-<option>-</option>
+<option>CONFIGURAÇÕES</option>
+<option>DESISTENCIA PROJETO FUST</option>
+<option>ENDEREÇO INCORRETO</option>
+<option>ENERGIA ELÉTRICA</option>
+<option>EQUIPAMENTOS DESLIGADOS</option>
+<option>EQUIPAMENTO TRAVADO</option>
+<option>ESCOLA EM REFORMA</option>
+<option>ESCOLA FECHADA</option>
+<option>ESTABILIZADOR/NO BREAK</option>
+<option>FALTA DE ENERGIA</option>
+<option>FALTA DE MATERIAIS</option>
+<option>FURTO/ROUBO</option>
+<option>FUSÃO DE FIBRA</option>
+<option>DUPLICADO/INDEVIDO</option>
+<option>INFRA</option>
+<option>INFRA_CLIENTE</option>
+<option>LIBERAÇÃO NÃO AUTORIZADA</option>
+<option>LINK DOWN</option>
+<option>MASSIVA</option>
+<option>MUDANÇA ENDEREÇO</option>
+<option>NÃO VALIDADO</option>
+<option>NORMALIZADO SEM INTERVENÇÃO</option>
+<option>REBOOT</option>
+<option>REDE EXTERNA</option>
+<option>REMANEJAMENTO</option>
+<option>RESET</option>
+<option>RESPONSÁVEL AUSENTE</option>
+<option>RETIRADA DE EQUIPAMENTOS</option>
+<option>TOPOLOGIA</option>
+<option>TOPOLOGIA INCORRETA</option>
+<option>TROCA</option>
+<option>TROCA DE CABEAMENTO</option>
+<option>TROCA DE CONECTOR (RJ-45)</option>
+<option>TROCA DE POWER INJECTOR</option>
+<option>TROCA DO EQUIPAMENTO</option>
+<option>TROCA POE</option>
 </select>
 
 <label>Técnico</label>
-<input id="tecnico" value="BRUNO ARRAIS">
+<input id="tecnico" placeholder="Nome do Técnico">
 
 <button class="btn-gerar" onclick="gerarCarimbo()">Gerar Carimbo</button>
 <button class="btn-copiar" onclick="copiar()">Copiar Carimbo</button>
 
 <textarea id="resultado" readonly></textarea>
 
-<div class="footer">
-Uso interno corporativo • Telefônica
-</div>
+<div class="footer">Sistema padronizado corporativo • Telefônica</div>
 
 </div>
 
